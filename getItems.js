@@ -24,7 +24,8 @@ module.exports = async function getItems({ href: url, type }) {
       if (tag && i !== 1) {
         const name = $(tag).text();
         const adKeyword = name.split(" ").pop();
-
+        
+        // skip ads
         if (adKeyword !== "years" && adKeyword !== "year") {
           const brand = $(articles[i])
             .find('span[data-product="brand"]')
